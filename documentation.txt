@@ -1,3 +1,7 @@
 26/10/2025
 ----------
 1.Creada la plaeta de colores en tailwind con la tematica negra y roja de la plataforma
+2.Creados componentes, footer,header,ShowcaseStock
+3.Creada pagina home
+4.Creada pagina Coche-detail con un mock de datos
+5.Creada pagina Coches, donde se ve todo el stock, con datos mockeados

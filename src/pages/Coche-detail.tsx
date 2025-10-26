@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import React from 'react';
 import { useParams } from 'react-router-dom';
@@ -100,6 +101,7 @@ const CocheDetail: React.FC = () => {
                 </div>
             </div>
         </div>
+        <Footer ano={2025} />
         </>
     );
 };

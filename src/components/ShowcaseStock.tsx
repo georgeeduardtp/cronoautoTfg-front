@@ -4,11 +4,20 @@ export default function ShowcaseStock() {
     return (
         <section className="w-full bg-dark-950">
             <div className="max-w-7xl mx-auto px-4 py-12">
-                <h2 className="text-gradient text-3xl font-bold mb-8">Coches Destacados</h2>
+                <div className="flex justify-between items-center mb-8">
+                    <h2 className="text-gradient text-3xl font-bold">Coches Destacados</h2>
+                    <Link 
+                        to="/coches" 
+                        className="bg-primary-600 hover:bg-red-500 hover:text-black text-white px-6 py-3 rounded-lg text-sm font-medium transition-colors duration-300 flex items-center gap-2"
+                    >
+                        Ver todos los coches
+                        <span className="text-lg">→</span>
+                    </Link>
+                </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Ejemplo de coche destacado */}
-                <div className="relative bg-dark-600 rounded-xl transition-all duration-300 hover:shadow-xl overflow-hidden group cursor-pointer" style={{ boxShadow: '0 4px 20px rgba(220, 38, 38, 0.15)' }}>
+                <div className="relative bg-dark-600 rounded-xl transition-all duration-300 overflow-hidden group cursor-pointer border border-transparent hover:border-red-500">
                     {/* Etiquetas superiores */}
                     <div className="absolute top-3 left-3 z-10 flex gap-1">
                         <span className="text-white px-2 py-0.5 rounded-full text-xs font-semibold shadow-lg border border-white/30 backdrop-blur-sm">
@@ -59,7 +68,7 @@ export default function ShowcaseStock() {
                     </div>
                 </div>
                 
-                <div className="relative bg-dark-600 rounded-xl transition-all duration-300 hover:shadow-xl overflow-hidden group cursor-pointer" style={{ boxShadow: '0 4px 20px rgba(220, 38, 38, 0.15)' }}>
+                <div className="relative bg-dark-600 rounded-xl transition-all duration-300 overflow-hidden group cursor-pointer border border-transparent hover:border-red-500">
                     {/* Etiquetas superiores */}
                     <div className="absolute top-3 left-3 z-10 flex gap-1">
                         <span className="text-white px-2 py-0.5 rounded-full text-xs font-semibold shadow-lg border border-white/30 backdrop-blur-sm">
@@ -109,7 +118,7 @@ export default function ShowcaseStock() {
                         </div>
                     </div>
                 </div>
-                <div className="relative bg-dark-600 rounded-xl transition-all duration-300 hover:shadow-xl overflow-hidden group cursor-pointer" style={{ boxShadow: '0 4px 20px rgba(220, 38, 38, 0.15)' }}>
+                <div className="relative bg-dark-600 rounded-xl transition-all duration-300 overflow-hidden group cursor-pointer border border-transparent hover:border-red-500">
                     {/* Etiquetas superiores */}
                     <div className="absolute top-3 left-3 z-10 flex gap-1">
                         <span className="text-white px-2 py-0.5 rounded-full text-xs font-semibold shadow-lg border border-white/30 backdrop-blur-sm">
