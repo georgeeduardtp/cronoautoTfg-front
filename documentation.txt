@@ -11,4 +11,4 @@
 1.Creado menu inferior para la vista movil
 2.Creada pagina contacto con formulario(no funcional aun)
 3.Tenia un error al usar variables de colores en tailwind, he visto que en la v4 se usan de manera distinta y no existe el tailwind.config.js
-4.
+4.He aprendido que en tailwind hay clases preconfiguradas para detectar movil o escritorio, primero le damos estilo a movil y luego a los dispositivos de px superiores

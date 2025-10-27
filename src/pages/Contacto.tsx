@@ -9,9 +9,9 @@ export default function Contacto() {
                 
 
                 <div className="max-w-none">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+                    <div className="flex flex-col-reverse lg:flex-row min-h-screen">
                         {/* Formulario de contacto */}
-                        <div className="bg-black p-12 flex flex-col justify-center">
+                        <div className="bg-black p-12 flex flex-col justify-center lg:w-1/2">
                             <div className="max-w-md mx-auto w-full">
                                 <h2 className="text-3xl font-bold text-white mb-2">CONTACTA CON</h2>
                                 <h1 className="text-4xl font-bold text-red-500 mb-8">CRONOAUTO</h1>
@@ -135,21 +135,21 @@ export default function Contacto() {
 
                         {/* Imagen de fondo estilo BMW */}
                         <div 
-                            className="bg-cover bg-center bg-no-repeat relative flex items-center justify-center"
+                            className="bg-cover bg-center bg-no-repeat relative flex items-center justify-center h-64 sm:h-80 lg:h-auto lg:w-1/2"
                             style={{
                                 backgroundImage: 'url(https://sportwagenmieten-schmidt.de/wp-content/uploads/2023/04/nachlik_photography_sportwagenmieten_schmidt_audi_R8_060.jpg)'
                             }}
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-black/90 to-red-900/40"></div>
-                            <div className="relative z-10 text-center text-white p-8">
+                            <div className="relative z-10 text-center text-white p-4 lg:p-8">
                                 <img 
                                     src="/escudo.svg" 
                                     alt="CronoAuto" 
-                                    className="w-40 h-60 mx-auto mb-6 opacity-90 transform scale-350"
+                                    className="w-16 h-29 sm:w-20 sm:h-30 lg:w-40 lg:h-60 mx-auto mb-2 lg:mb-6 opacity-90 transform scale-450 lg:scale-350"
                                 />
-                                <h3 className="text-3xl font-bold mb-4">Conecta con CronoAuto</h3>
-                                <p className="text-xl opacity-90 mb-2">Estamos aquí para ti</p>
-                                <p className="text-lg opacity-75">Tu consulta es importante para nosotros</p>
+                                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 lg:mb-4">Conecta con CronoAuto</h3>
+                                <p className="text-sm sm:text-base lg:text-xl opacity-90 mb-1 lg:mb-2">Estamos aquí para ti</p>
+                                <p className="text-xs sm:text-sm lg:text-lg opacity-75">Tu consulta es importante para nosotros</p>
                             </div>
                         </div>
                     </div>
