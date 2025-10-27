@@ -2,7 +2,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Link } from 'react-router-dom';
 
-interface Car {
+type Car = {
     id: string;
     name: string;
     brand: string;
@@ -114,22 +114,22 @@ export default function Coches() {
 
                     {/* Filtros */}
                     <div className="mb-6 flex flex-wrap gap-4">
-                        <button className="bg-dark-950 border border-primary-600 hover:bg-primary-600 hover:text-dark-950 text-primary-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                        <button className="bg-dark-950 border border-white hover:bg-primary-600 hover:text-dark-950 text-white px-4 py-1.5  text-sm font-medium transition-colors">
                             Todos
                         </button>
-                        <button className="bg-dark-950 border border-primary-600 hover:bg-primary-600 hover:text-dark-950 text-primary-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                        <button className="bg-dark-950 border border-white hover:bg-primary-600 hover:text-dark-950 text-white px-4 py-1.5  text-sm font-medium transition-colors">
                             BMW
                         </button>
-                        <button className="bg-dark-950 border border-primary-600 hover:bg-primary-600 hover:text-dark-950 text-primary-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                        <button className="bg-dark-950 border border-white hover:bg-primary-600 hover:text-dark-950 text-white px-4 py-1.5  text-sm font-medium transition-colors">
                             Tesla
                         </button>
-                        <button className="bg-dark-950 border border-primary-600 hover:bg-primary-600 hover:text-dark-950 text-primary-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                        <button className="bg-dark-950 border border-white hover:bg-primary-600 hover:text-dark-950 text-white px-4 py-1.5  text-sm font-medium transition-colors">
                             Audi
                         </button>
-                        <button className="bg-dark-950 border border-primary-600 hover:bg-primary-600 hover:text-dark-950 text-primary-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                        <button className="bg-dark-950 border border-white hover:bg-primary-600 hover:text-dark-950 text-white px-4 py-1.5  text-sm font-medium transition-colors">
                             Eléctricos
                         </button>
-                        <button className="bg-dark-950 border border-primary-600 hover:bg-primary-600 hover:text-dark-950 text-primary-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                        <button className="bg-dark-950 border border-white hover:bg-primary-600 hover:text-dark-950 text-white px-4 py-1.5  text-sm font-medium transition-colors">
                             Híbridos
                         </button>
                     </div>

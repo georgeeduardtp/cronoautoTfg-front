@@ -2,7 +2,7 @@ export default function Header() {
   return (
     <>
       {/* Header principal */}
-      <header className="hidden md:block sticky top-0 z-50 bg-dark-950/95 backdrop-blur border-b border-red-600 shadow-strong">
+      <header className="hidden md:block top-0 z-50 bg-dark-950/95 backdrop-blur border-b border-red-600 shadow-strong">
         <div className="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
           <a href="./" className="font-heading font-bold text-white flex items-center gap-3 text-xl">
             <img src="/escudo.svg" alt="Logo" className="w-36 h-36" />
@@ -24,13 +24,13 @@ export default function Header() {
               Coches
             </a>
             <a 
-              href="#" 
+              href="/login" 
               className="text-dark-300 hover:text-primary-500 font-medium transition-colors duration-200"
             >
               Iniciar Sesión
             </a>
             <a 
-              href="#" 
+              href="/registro" 
               className="bg-primary-600 hover:bg-primary-500 hover:text-black text-white px-4 py-2 text-sm font-medium transition-colors duration-300 inline-block text-center no-underline "
             >
               Registrarse
@@ -59,8 +59,8 @@ export default function Header() {
               href="/coches"
               className="flex flex-col items-center justify-center min-w-0 flex-1 text-center group"
             >
-              <svg className="w-5 h-5 text-dark-300 group-hover:text-primary-500 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              <svg className="w-5 h-5 text-dark-300 group-hover:text-primary-500 transition-colors duration-200" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M5 11l1.5-4.5h11L19 11m-14 0h14m-14 0v6a1 1 0 001 1h1a1 1 0 001-1v-1h8v1a1 1 0 001 1h1a1 1 0 001-1v-6M8 15h.01M16 15h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
               </svg>
               <span className="text-xs text-dark-300 group-hover:text-primary-500 transition-colors duration-200 mt-1">Coches</span>
             </a>
