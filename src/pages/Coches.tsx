@@ -114,22 +114,22 @@ export default function Coches() {
 
                     {/* Filtros */}
                     <div className="mb-6 flex flex-wrap gap-4">
-                        <button className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                        <button className="bg-dark-950 border border-primary-600 hover:bg-primary-600 hover:text-dark-950 text-primary-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
                             Todos
                         </button>
-                        <button className="bg-dark-600 hover:bg-dark-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                        <button className="bg-dark-950 border border-primary-600 hover:bg-primary-600 hover:text-dark-950 text-primary-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
                             BMW
                         </button>
-                        <button className="bg-dark-600 hover:bg-dark-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                        <button className="bg-dark-950 border border-primary-600 hover:bg-primary-600 hover:text-dark-950 text-primary-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
                             Tesla
                         </button>
-                        <button className="bg-dark-600 hover:bg-dark-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                        <button className="bg-dark-950 border border-primary-600 hover:bg-primary-600 hover:text-dark-950 text-primary-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
                             Audi
                         </button>
-                        <button className="bg-dark-600 hover:bg-dark-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                        <button className="bg-dark-950 border border-primary-600 hover:bg-primary-600 hover:text-dark-950 text-primary-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
                             Eléctricos
                         </button>
-                        <button className="bg-dark-600 hover:bg-dark-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                        <button className="bg-dark-950 border border-primary-600 hover:bg-primary-600 hover:text-dark-950 text-primary-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
                             Híbridos
                         </button>
                     </div>
@@ -140,7 +140,7 @@ export default function Coches() {
                     {/* Grid de coches */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         {allCars.map((car) => (
-                            <div key={car.id} className="relative bg-dark-600 rounded-xl transition-all duration-300 overflow-hidden group cursor-pointer border border-transparent hover:border-red-500">
+                            <div key={car.id} className="relative bg-dark-900 transition-all  overflow-hidden group cursor-pointer border border-transparent hover:border-red-500 hover:shadow-[6px_6px_10px_rgba(220,38,38,0.6),-2px_-2px_8px_rgba(220,38,38,0.2)]">
                                 {/* Etiquetas superiores */}
                                 <div className="absolute top-3 left-3 z-10 flex gap-1">
                                     {car.tags.map((tag, index) => (
@@ -182,14 +182,14 @@ export default function Coches() {
                                     {/* Precio */}
                                     <div className="flex items-center justify-between">
                                         <div className="space-y-1">
-                                            <p className="text-primary-400 font-bold text-lg">Desde {car.price.toLocaleString()} €</p>
+                                            <p className="text-primary-600 font-bold text-lg">Desde {car.price.toLocaleString()} €</p>
                                             {car.originalPrice && (
                                                 <p className="text-dark-400 text-xs line-through">{car.originalPrice.toLocaleString()} €</p>
                                             )}
                                         </div>
                                         <Link 
                                             to={`/Coche-detail`} 
-                                            className="bg-primary-600 hover:bg-red-500 hover:text-black text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300"
+                                            className="bg-primary-600 hover:bg-red-500 hover:text-black text-white px-4 py-2 text-sm font-medium transition-colors duration-300"
                                         >
                                             Ver más
                                         </Link>

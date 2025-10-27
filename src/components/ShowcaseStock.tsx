@@ -8,7 +8,7 @@ export default function ShowcaseStock() {
                     <h2 className="text-gradient text-3xl font-bold">Coches Destacados</h2>
                     <Link 
                         to="/coches" 
-                        className="bg-primary-600 hover:bg-red-500 hover:text-black text-white px-6 py-3 rounded-lg text-sm font-medium transition-colors duration-300 flex items-center gap-2"
+                        className="bg-dark-950 border border-primary-600 hover:bg-primary-600 hover:text-dark-950 text-primary-600 px-6 py-3  text-sm font-medium transition-colors duration-300 flex items-center gap-2"
                     >
                         Ver todos los coches
                         <span className="text-lg">→</span>
@@ -17,7 +17,7 @@ export default function ShowcaseStock() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Ejemplo de coche destacado */}
-                <div className="relative bg-dark-600 rounded-xl transition-all duration-300 overflow-hidden group cursor-pointer border border-transparent hover:border-red-500">
+                <div className="relative bg-dark-900  transition-all duration-0 overflow-hidden group cursor-pointer border border-transparent hover:border-primary-800 hover:shadow-[6px_6px_10px_rgba(220,38,38,0.6),-2px_-2px_8px_rgba(220,38,38,0.2)]">
                     {/* Etiquetas superiores */}
                     <div className="absolute top-3 left-3 z-10 flex gap-1">
                         <span className="text-white px-2 py-0.5 rounded-full text-xs font-semibold shadow-lg border border-white/30 backdrop-blur-sm">
@@ -60,7 +60,7 @@ export default function ShowcaseStock() {
                             </div>
                             <Link 
                                 to="/Coche-detail" 
-                                className="bg-primary-600 hover:bg-red-500 hover:text-black text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors duration-300"
+                                className="bg-dark-950 border border-primary-600 hover:bg-primary-600 hover:text-dark-950 text-primary-600 px-5 py-2.5  text-sm font-medium transition-colors duration-300"
                             >
                                 Ver más
                             </Link>
@@ -68,7 +68,7 @@ export default function ShowcaseStock() {
                     </div>
                 </div>
                 
-                <div className="relative bg-dark-600 rounded-xl transition-all duration-300 overflow-hidden group cursor-pointer border border-transparent hover:border-red-500">
+                <div className="relative bg-dark-900  transition-all  overflow-hidden group cursor-pointer border border-transparent hover:border-red-500 hover:shadow-[6px_6px_10px_rgba(220,38,38,0.6),-2px_-2px_8px_rgba(220,38,38,0.2)]">
                     {/* Etiquetas superiores */}
                     <div className="absolute top-3 left-3 z-10 flex gap-1">
                         <span className="text-white px-2 py-0.5 rounded-full text-xs font-semibold shadow-lg border border-white/30 backdrop-blur-sm">
@@ -111,14 +111,14 @@ export default function ShowcaseStock() {
                             </div>
                             <Link 
                                 to="/Coche-detail" 
-                                className="bg-primary-600 hover:bg-red-500 hover:text-black text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors duration-300"
+                                className="bg-dark-950 border border-primary-600 hover:bg-primary-600 hover:text-dark-950 text-primary-600 px-5 py-2.5  text-sm font-medium transition-colors duration-300"
                             >
                                 Ver más
                             </Link>
                         </div>
                     </div>
                 </div>
-                <div className="relative bg-dark-600 rounded-xl transition-all duration-300 overflow-hidden group cursor-pointer border border-transparent hover:border-red-500">
+                <div className="relative bg-dark-900  transition-all  overflow-hidden group cursor-pointer border border-transparent hover:border-red-500 hover:shadow-[6px_6px_10px_rgba(220,38,38,0.6),-2px_-2px_8px_rgba(220,38,38,0.2)]">
                     {/* Etiquetas superiores */}
                     <div className="absolute top-3 left-3 z-10 flex gap-1">
                         <span className="text-white px-2 py-0.5 rounded-full text-xs font-semibold shadow-lg border border-white/30 backdrop-blur-sm">
@@ -161,7 +161,7 @@ export default function ShowcaseStock() {
                             </div>
                             <Link 
                                 to="/Coche-detail" 
-                                className="bg-primary-600 hover:bg-red-500 hover:text-black text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors duration-300"
+                                className="bg-dark-950 border border-primary-600 hover:bg-primary-600 hover:text-dark-950 text-primary-600 px-5 py-2.5  text-sm font-medium transition-colors duration-300"
                             >
                                 Ver más
                             </Link>

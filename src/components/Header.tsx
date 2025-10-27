@@ -31,7 +31,7 @@ export default function Header() {
             </a>
             <a 
               href="#" 
-              className="btn-primary inline-block text-center no-underline"
+              className="bg-primary-600 hover:bg-primary-500 hover:text-black text-white px-4 py-2 text-sm font-medium transition-colors duration-300 inline-block text-center no-underline "
             >
               Registrarse
             </a>
