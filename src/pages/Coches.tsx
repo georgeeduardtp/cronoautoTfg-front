@@ -96,15 +96,24 @@ export default function Coches() {
         <>
             <Header />
             <div className="bg-dark-950 min-h-screen">
-                <div className="max-w-7xl mx-auto px-4 py-12">
-                    {/* Encabezado */}
-                    <div className="mb-8">
-                        <h1 className="text-gradient text-4xl font-bold mb-4">Todos nuestros coches</h1>
-                        <p className="text-dark-300 text-lg">Explora nuestra colección completa de vehículos premium</p>
+                {/* Encabezado con fondo de bandera de carreras */}
+                <div 
+                    className="w-full py-6.5 px-4 bg-cover bg-center bg-no-repeat relative"
+                    style={{
+                        backgroundImage: 'url(https://static.vecteezy.com/system/resources/previews/015/275/897/large_2x/race-background-racing-flag-race-checker-background-free-vector.jpg)'
+                    }}
+                >
+                    <div className="absolute inset-0 bg-gradient-to-l from-red-900/70 to-black/90"></div>
+                    <div className="relative z-10 max-w-7xl mx-auto">
+                        <h1 className="text-white text-4xl font-bold mb-4">Todos nuestros coches</h1>
+                        <p className="text-gray-200 text-lg">Explora nuestra colección completa de vehículos premium</p>
                     </div>
+                </div>
+
+                <div className="max-w-7xl mx-auto px-4 py-7">
 
                     {/* Filtros */}
-                    <div className="mb-8 flex flex-wrap gap-4">
+                    <div className="mb-6 flex flex-wrap gap-4">
                         <button className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
                             Todos
                         </button>
@@ -124,6 +133,9 @@ export default function Coches() {
                             Híbridos
                         </button>
                     </div>
+
+                    {/* Línea divisoria */}
+                    <div className="w-full h-px bg-white mb-8"></div>
 
                     {/* Grid de coches */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -176,7 +188,7 @@ export default function Coches() {
                                             )}
                                         </div>
                                         <Link 
-                                            to={`/Coche-detail.tsx`} 
+                                            to={`/Coche-detail`} 
                                             className="bg-primary-600 hover:bg-red-500 hover:text-black text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300"
                                         >
                                             Ver más

@@ -2,7 +2,7 @@ export default function Header() {
   return (
     <>
       {/* Header principal */}
-      <header className="sticky top-0 z-50 bg-dark-950/95 backdrop-blur border-b border-dark-900 shadow-strong">
+      <header className="sticky top-0 z-50 bg-dark-950/95 backdrop-blur border-b border-red-600 shadow-strong">
         <div className="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
           <a href="./" className="font-heading font-bold text-white flex items-center gap-3 text-xl">
             <img src="/escudo.svg" alt="Logo" className="w-36 h-36" />
@@ -12,13 +12,13 @@ export default function Header() {
           {/* Navegación desktop */}
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a 
-              href="#" 
+              href="/contacto" 
               className="text-dark-300 hover:text-primary-500 font-medium transition-colors duration-200"
             >
               Contactanos
             </a>
             <a 
-              href="/Coches.tsx" 
+              href="/coches" 
               className="text-dark-300 hover:text-primary-500 font-medium transition-colors duration-200"
             >
               Coches
@@ -67,7 +67,7 @@ export default function Header() {
 
             {/* Contacto */}
             <a 
-              href="#"
+              href="/contacto"
               className="flex flex-col items-center justify-center min-w-0 flex-1 text-center group"
             >
               <svg className="w-5 h-5 text-dark-300 group-hover:text-primary-500 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -59,7 +59,7 @@ export default function ShowcaseStock() {
                                 <p className="text-dark-400 text-xs line-through">49.900 €</p>
                             </div>
                             <Link 
-                                to="/Coche-detail.tsx" 
+                                to="/Coche-detail" 
                                 className="bg-primary-600 hover:bg-red-500 hover:text-black text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors duration-300"
                             >
                                 Ver más
@@ -110,7 +110,7 @@ export default function ShowcaseStock() {
                                 <p className="text-dark-400 text-xs line-through">47.990 €</p>
                             </div>
                             <Link 
-                                to="/Coche-detail.tsx" 
+                                to="/Coche-detail" 
                                 className="bg-primary-600 hover:bg-red-500 hover:text-black text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors duration-300"
                             >
                                 Ver más
@@ -160,7 +160,7 @@ export default function ShowcaseStock() {
                                 <p className="text-dark-400 text-xs line-through">41.900 €</p>
                             </div>
                             <Link 
-                                to="/Coche-detail.tsx" 
+                                to="/Coche-detail" 
                                 className="bg-primary-600 hover:bg-red-500 hover:text-black text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors duration-300"
                             >
                                 Ver más

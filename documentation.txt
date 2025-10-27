@@ -8,4 +8,5 @@
 
 27/10/2025
 ----------
-1.Creados menu inferior para la vista movil
+1.Creado menu inferior para la vista movil
+2.Creada pagina contacto con formulario(no funcional aun)
