@@ -5,3 +5,7 @@
 3.Creada pagina home
 4.Creada pagina Coche-detail con un mock de datos
 5.Creada pagina Coches, donde se ve todo el stock, con datos mockeados
+
+27/10/2025
+----------
+1.Creados menu inferior para la vista movil
