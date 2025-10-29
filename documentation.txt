@@ -25,3 +25,7 @@
 2.Hecho el fetch del endpoint getAllCars 
 3.Pasados todos los valores a dinamico
 4.Creada pagina creacion coche y implementado el endpoint post para el
+5.Agregado buscador por varios filtros en la pagina de Coches 
+    -He aprendido el funcionamiento de verificaciones tipo: car.tags && car.tags.map((tag, index)), primero verifica la existencia de car.tags, y luego si existe ejecuta lo de despues del && , sino devuelve null
+    -He aprendido funcionamiento de las key, optimizan el rerenderizado, se aplican cuando tenemos mapeos para que identifiquen mejor el elemento, por ejemplo tenemos el mapeo de coches entonces la key sera car.id, luego tenemos el mapeo de tags, los cuales podrán ser varios, entonces tenemos otra key, en caso de que tuvieramos una colaboracion de marcas en un coche, deberiamos mapearlas y generariamos otra key.
+6.Modificada pagina de contacto para que requiera datos sobre coches(no esta implementada funcionalidad)

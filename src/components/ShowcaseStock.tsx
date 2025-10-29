@@ -36,7 +36,7 @@ export default function ShowcaseStock() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 {cars.map((car: CarCard) => (
-                    <>
+                    <div key={car.id}>
                 {/* Ejemplo de coche destacado */}
                 <div className="relative bg-dark-900  transition-all duration-0 overflow-hidden group cursor-pointer border border-transparent hover:border-primary-800 hover:shadow-[6px_6px_10px_rgba(220,38,38,0.6),-2px_-2px_8px_rgba(220,38,38,0.2)]">
                     {/* Etiquetas superiores */}
@@ -96,7 +96,7 @@ export default function ShowcaseStock() {
                         </div>
                     </div>
                 </div>   
-                </>                
+                </div>                
                 ))}
                 
                 
