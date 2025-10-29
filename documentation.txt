@@ -18,3 +18,10 @@
 28/10/2025
 ----------
 1.Modificada barra de scroll con webkit
+
+29/10/2025
+----------
+1.Creado el car.ts para el type del carCard(reminder: añadir parametro de destacado)
+2.Hecho el fetch del endpoint getAllCars 
+3.Pasados todos los valores a dinamico
+4.Creada pagina creacion coche y implementado el endpoint post para el

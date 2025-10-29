@@ -5,6 +5,7 @@ import Coches from "@/pages/Coches";
 import Contacto from "@/pages/Contacto";
 import Registro from "@/pages/Registro";
 import Login from "@/pages/Login";
+import CrearCoche from "@/pages/CrearCoche";
 
 
 export const router = createBrowserRouter([
@@ -14,5 +15,6 @@ export const router = createBrowserRouter([
   { path: "/registro", element: <Registro /> },
   { path: "/login", element: <Login /> },
   { path: "/Coche-detail", element: <CocheDetail /> },
+  { path: "/crear-coche", element: <CrearCoche /> },
 
 ]);
