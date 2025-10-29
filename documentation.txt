@@ -14,3 +14,7 @@
 4.He aprendido que en tailwind hay clases preconfiguradas para detectar movil o escritorio, primero le damos estilo a movil y luego a los dispositivos de px superiores
 5.Agregados Login y Registro (no funcionales)
 6.Instlada biblioteca Simple Icons para svg de marcas
+
+28/10/2025
+----------
+1.Modificada barra de scroll con webkit

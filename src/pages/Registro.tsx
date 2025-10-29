@@ -13,7 +13,7 @@ export default function Registro() {
                         <div 
                             className="bg-cover bg-center bg-no-repeat relative flex items-center justify-center h-64 sm:h-80 lg:h-auto lg:w-1/2"
                             style={{
-                                backgroundImage: 'url(https://images4.alphacoders.com/105/1057695.jpg)'
+                                backgroundImage: 'url(https://sportwagenmieten-schmidt.de/wp-content/uploads/2023/04/nachlik_photography_sportwagenmieten_schmidt_audi_R8_060.jpg)'
                             }}
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-black/90 to-red-900/40"></div>

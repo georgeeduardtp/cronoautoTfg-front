@@ -14,12 +14,12 @@ export default function Contacto() {
                         <div className="bg-black p-12 flex flex-col justify-center lg:w-1/2">
                             <div className="max-w-md mx-auto w-full">
                                 <h2 className="text-3xl font-bold text-white mb-2">CONTACTA CON</h2>
-                                <h1 className="text-4xl font-bold text-red-500 mb-8">CRONOAUTO</h1>
+                                <h1 className="text-4xl font-bold text-red-500 mb-6">CRONOAUTO</h1>
                             
-                            <form className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <form className="space-y-4">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                                     <div>
-                                        <label htmlFor="nombre" className="block text-sm font-medium text-gray-300 mb-2">
+                                        <label htmlFor="nombre" className="block text-sm font-medium text-gray-300 mb-1">
                                             Nombre*
                                         </label>
                                         <input
@@ -27,12 +27,12 @@ export default function Contacto() {
                                             id="nombre"
                                             name="nombre"
                                             required
-                                            className="w-full px-0 py-3 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors"
+                                            className="w-full px-0 py-2 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors"
                                             placeholder=""
                                         />
                                     </div>
                                     <div>
-                                        <label htmlFor="apellido" className="block text-sm font-medium text-gray-300 mb-2">
+                                        <label htmlFor="apellido" className="block text-sm font-medium text-gray-300 mb-1">
                                             Apellidos*
                                         </label>
                                         <input
@@ -40,14 +40,14 @@ export default function Contacto() {
                                             id="apellido"
                                             name="apellido"
                                             required
-                                            className="w-full px-0 py-3 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors"
+                                            className="w-full px-0 py-2 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors"
                                             placeholder=""
                                         />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
                                         Correo electrónico*
                                     </label>
                                     <input
@@ -55,33 +55,33 @@ export default function Contacto() {
                                         id="email"
                                         name="email"
                                         required
-                                        className="w-full px-0 py-3 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors"
+                                        className="w-full px-0 py-2 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors"
                                         placeholder=""
                                     />
                                 </div>
 
                                 <div>
-                                    <label htmlFor="telefono" className="block text-sm font-medium text-gray-300 mb-2">
+                                    <label htmlFor="telefono" className="block text-sm font-medium text-gray-300 mb-1">
                                         Teléfono
                                     </label>
                                     <input
                                         type="tel"
                                         id="telefono"
                                         name="telefono"
-                                        className="w-full px-0 py-3 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors"
+                                        className="w-full px-0 py-2 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors"
                                         placeholder=""
                                     />
                                 </div>
 
                                 <div>
-                                    <label htmlFor="asunto" className="block text-sm font-medium text-gray-300 mb-2">
+                                    <label htmlFor="asunto" className="block text-sm font-medium text-gray-300 mb-1">
                                         Asunto*
                                     </label>
                                     <select
                                         id="asunto"
                                         name="asunto"
                                         required
-                                        className="w-full px-0 py-3 bg-black border-0 border-b-2 border-gray-600 text-white focus:outline-none focus:border-red-500 transition-colors"
+                                        className="w-full px-0 py-2 bg-black border-0 border-b-2 border-gray-600 text-white focus:outline-none focus:border-red-500 transition-colors"
                                     >
                                         <option value="">Selecciona un asunto</option>
                                         <option value="informacion">Información general</option>
@@ -93,21 +93,21 @@ export default function Contacto() {
                                 </div>
 
                                 <div>
-                                    <label htmlFor="mensaje" className="block text-sm font-medium text-gray-300 mb-2">
+                                    <label htmlFor="mensaje" className="block text-sm font-medium text-gray-300 mb-1">
                                         Mensaje*
                                     </label>
                                     <textarea
                                         id="mensaje"
                                         name="mensaje"
-                                        rows={4}
+                                        rows={3}
                                         required
-                                        className="w-full px-0 py-3 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors resize-none"
+                                        className="w-full px-0 py-2 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors resize-none"
                                         placeholder="Cuéntanos cómo podemos ayudarte..."
                                     ></textarea>
                                 </div>
 
                                 {/* Política de privacidad */}
-                                <div className="flex items-start space-x-3 mt-6 mb-6">
+                                <div className="flex items-start space-x-3 mt-4 mb-4">
                                     <input
                                         type="checkbox"
                                         id="privacidad"
@@ -123,7 +123,7 @@ export default function Contacto() {
 
                                 <button
                                     type="submit"
-                                    className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-4 px-6 transition-colors duration-300 text-sm tracking-wider"
+                                    className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 transition-colors duration-300 text-sm tracking-wider"
                                 >
                                     ENVIAR MENSAJE
                                 </button>
@@ -137,20 +137,11 @@ export default function Contacto() {
                         <div 
                             className="bg-cover bg-center bg-no-repeat relative flex items-center justify-center h-64 sm:h-80 lg:h-auto lg:w-1/2"
                             style={{
-                                backgroundImage: 'url(https://sportwagenmieten-schmidt.de/wp-content/uploads/2023/04/nachlik_photography_sportwagenmieten_schmidt_audi_R8_060.jpg)'
+                                backgroundImage: 'url(/imagenEdu.jpg)'
                             }}
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-black/90 to-red-900/40"></div>
-                            <div className="relative z-10 text-center text-white p-4 lg:p-8">
-                                <img 
-                                    src="/escudo.svg" 
-                                    alt="CronoAuto" 
-                                    className="w-16 h-29 sm:w-20 sm:h-30 lg:w-40 lg:h-60 mx-auto mb-2 lg:mb-6 opacity-90 transform scale-450 lg:scale-350"
-                                />
-                                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 lg:mb-4">Conecta con CronoAuto</h3>
-                                <p className="text-sm sm:text-base lg:text-xl opacity-90 mb-1 lg:mb-2">Estamos aquí para ti</p>
-                                <p className="text-xs sm:text-sm lg:text-lg opacity-75">Tu consulta es importante para nosotros</p>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
