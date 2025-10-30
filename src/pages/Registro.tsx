@@ -179,19 +179,6 @@ export default function Registro() {
                                         </label>
                                     </div>
 
-                                    {/* Newsletter */}
-                                    <div className="flex items-start space-x-3 mb-4">
-                                        <input
-                                            type="checkbox"
-                                            id="newsletter"
-                                            name="newsletter"
-                                            className="w-4 h-4 text-red-600 bg-white border-gray-300 rounded focus:ring-red-500 focus:ring-2 mt-1"
-                                        />
-                                        <label htmlFor="newsletter" className="text-sm text-gray-300">
-                                            Deseo recibir información sobre ofertas y novedades de CronoAuto
-                                        </label>
-                                    </div>
-
                                     <button
                                         type="submit"
                                         className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 transition-colors duration-300 text-sm tracking-wider"

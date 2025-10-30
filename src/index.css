@@ -185,3 +185,12 @@ body {
   scrollbar-width: thin; 
   scrollbar-color: var(--color-primary-600) var(--color-dark-950); 
 }
+
+/* Barra de scroll a la izquierda para el formulario */
+.scroll-left {
+  direction: rtl; /* Cambia la dirección del texto a derecha-izquierda */
+}
+
+.scroll-left > * {
+  direction: ltr; /* Como hemos cambiado la direccion esta en modo espejo y tenemos que restaurar la direccion original */
+}

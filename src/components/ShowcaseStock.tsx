@@ -20,7 +20,7 @@ export default function ShowcaseStock() {
       }, []);
 
     return (
-        <section className="w-full bg-dark-950">
+        <section className="w-full bg-dark-950 ">
             <div className="max-w-7xl mx-auto px-4 py-12">
                 <div className="flex justify-between items-center mb-8">
                     <h2 className="text-gradient text-3xl font-bold">Coches Destacados</h2>

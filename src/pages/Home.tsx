@@ -23,7 +23,12 @@ export default function Home() {
         <h1 className="text-4xl font-bold mb-4 text-white">Bienvenido a Crono Auto</h1>
         <p className="text-lg text-white">Tu solución para encontrar el coche de tus sueños al mejor precio.</p>
         </div>
+        
         </section>
+        
+        
+     
+      
         <ShowcaseStock />
         
       </main>

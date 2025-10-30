@@ -1,8 +1,12 @@
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-import { useState } from 'react';
 
-export default function CrearCoche() {
+import { useEffect, useState } from 'react';
+import type { CarCard } from '@/types/car';
+
+export default function GestionCoches() {
+    const [cars, setCars] = useState<CarCard[]>([]); // Estado para almacenar los coches existentes
+    const [searchTerm, setSearchTerm] = useState(''); // Estado para el buscador
     const [formData, setFormData] = useState({
         brand: '',
         model: '',
@@ -91,17 +95,56 @@ export default function CrearCoche() {
         }
     };
 
+    useEffect(() => { //captua eventos
+            console.log('cargando coches...');
+            fetch('http://localhost:8080/cars',{  //peticion a la api
+              method: "GET",
+            }).then(response => response.json())
+            .then((res) => {
+              setCars(res);
+              console.log('Coches cargados:', res);
+            }).catch((error) => {
+              console.error('Error fetching cars:', error);
+            });
+          }, []);
+
+    // Filtrar coches basado en el término de búsqueda
+    const filteredCars = cars.filter((car: CarCard) =>  
+        car.brand.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        car.model.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        car.car_type.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        car.engine_type.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    const confirm = window.confirm;
+    const handleDeleteCar = async (carId: number) => {
+        
+        try {
+            if (!confirm('¿Estás seguro de que deseas eliminar este coche? Esta acción no se puede deshacer.')) return;
+            await fetch(`http://localhost:8080/cars/${carId}`, {
+                method: 'DELETE',
+            });
+            setCars(prev => prev.filter(car => car.id !== carId));
+            console.log('Coche eliminado:', carId);
+        } catch (error) {
+            console.error('Error al eliminar coche:', error);
+            alert('Error al eliminar coche');
+        }
+    };
+
     return (
         <>
             <Header />
-            <div className="bg-dark-950 min-h-screen">
-                <div className="max-w-none">
-                    <div className="flex flex-col-reverse lg:flex-row min-h-screen">
+            <div className="bg-dark-950 h-screen flex flex-col">
+                <div className="flex-1 flex flex-col lg:flex-row overflow-hidden">
+                    <div className="flex flex-col lg:flex-row flex-1">
                         {/* Formulario de crear coche */}
-                        <div className="bg-black p-12 flex flex-col justify-center lg:w-1/2 overflow-y-auto">
-                            <div className="max-w-md mx-auto w-full">
+                        <div className="bg-black lg:w-1/2 flex flex-col">
+                            <div className="p-6 border-b border-gray-800">
                                 <h2 className="text-3xl font-bold text-white mb-2">AGREGAR NUEVO</h2>
-                                <h1 className="text-4xl font-bold text-red-500 mb-6">VEHÍCULO</h1>
+                                <h1 className="text-4xl font-bold text-red-500">VEHÍCULO</h1>
+                            </div>
+                            <div className="flex-1 overflow-y-auto p-6 scroll-left">
+                                <div className="max-w-md mx-auto w-full">
                             
                                 <form onSubmit={handleSubmit} className="space-y-4">
                                     {/* Información básica */}
@@ -399,20 +442,129 @@ export default function CrearCoche() {
                                         CREAR VEHÍCULO
                                     </button>
                                 </form>
+                                </div>
                             </div>
                         </div>
 
-                        {/* Imagen de fondo */}
-                        <div 
-                            className="bg-cover bg-center bg-no-repeat relative flex items-center justify-center h-64 sm:h-80 lg:h-auto lg:w-1/2"
-                            style={{
-                                backgroundImage: 'url(https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)'
-                            }}
-                        >
-                            <div className="absolute inset-0 bg-gradient-to-br from-black/90 to-red-900/40"></div>
-                            <div className="relative z-10 text-center text-white">
-                                <h3 className="text-2xl font-bold mb-4">Agregar Nuevo Vehículo</h3>
-                                <p className="text-lg opacity-90">Completa el formulario para añadir un nuevo coche a nuestra colección</p>
+                        {/* Panel de coches existentes */}
+                        <div className="bg-dark-950 lg:w-1/2 flex flex-col border-l border-gray-800">
+                            <div className="p-6 border-b border-gray-800">
+                                <h2 className="text-3xl font-bold text-white mb-2">GESTIONAR</h2>
+                                <h1 className="text-4xl font-bold text-red-500 mb-4">VEHÍCULOS</h1>
+                                
+                                {/* Buscador */}
+                                <div className="mb-4">
+                                    <div className="relative">
+                                        <input
+                                            type="text"
+                                            placeholder="Buscar por marca, modelo, tipo..."
+                                            value={searchTerm}
+                                            onChange={(e) => setSearchTerm(e.target.value)}
+                                            className="w-full px-4 py-3 bg-dark-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"
+                                        />
+                                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                                            <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                {/* Contador de resultados */}
+                                <div className="flex justify-between items-center text-sm">
+                                    <p className="text-gray-400">
+                                        Total: {cars.length} vehículos
+                                    </p>
+                                    {searchTerm && ( //solo muestra si hay algo escrito
+                                        <p className="text-primary-600">
+                                            {filteredCars.length} resultado{filteredCars.length !== 1 ? 's' : ''} {/*Si la cantidad es distinta de 1, plural*/}
+                                        </p>
+                                    )}
+                                </div>
+                            </div>
+                            <div className="flex-1 overflow-y-auto p-6"> {/* Con el overflow-y-auto se crea barra de scroll independiente */}
+                            
+                            <div className="space-y-3">
+                                {filteredCars.map((car) => (
+                                        <div key={car.id} className="bg-dark-900 border border-gray-700 hover:border-red-500 transition-all duration-300 p-4 flex items-center space-x-4 group">
+                                            {/* Imagen del coche */}
+                                            <div className="flex-shrink-0">
+                                                <img 
+                                                    src={car.imageUrl} 
+                                                    alt={`${car.brand} ${car.model}`}
+                                                    className="w-20 h-16 object-cover rounded"
+                                                />
+                                            </div>
+                                            
+                                            {/* Información principal */}
+                                            <div className="flex-grow">
+                                                <div className="flex items-center justify-between">
+                                                    <h4 className="text-white font-semibold text-lg group-hover:text-red-400 transition-colors">
+                                                        {car.brand} {car.model}
+                                                    </h4>
+                                                    <span className="text-red-500 font-bold text-lg">
+                                                        {car.price.toLocaleString()}€
+                                                    </span>
+                                                </div>
+                                                
+                                                <div className="flex items-center space-x-4 mt-2 text-sm text-gray-400">
+                                                    <span>ID: {car.id}</span>
+                                                    <span>•</span>
+                                                    <span>{car.car_type}</span>
+                                                    <span>•</span>
+                                                    <span>{car.engine_type}</span>
+                                                    {car.original_price && (
+                                                        <>
+                                                            <span>•</span>
+                                                            <span className="line-through text-gray-500">
+                                                                {car.original_price.toLocaleString()}€
+                                                            </span>
+                                                        </>
+                                                    )}
+                                                </div>
+                                                
+                                                {/* Tags */}
+                                                {car.tags && car.tags.length > 0 && (
+                                                    <div className="flex flex-wrap gap-1 mt-2">
+                                                        {car.tags.slice(0, 3).map((tag, index) => (
+                                                            <span 
+                                                                key={index}
+                                                                className="text-xs bg-red-600/20 text-red-400 px-2 py-1 rounded-full border border-red-600/30"
+                                                            >
+                                                                {tag}
+                                                            </span>
+                                                        ))}
+                                                        {car.tags.length > 3 && (
+                                                            <span className="text-xs text-gray-500">+{car.tags.length - 3} más</span>
+                                                        )}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            
+                                            {/* Botones de acción */}
+                                            <div className="flex-shrink-0 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity"> {/* Le asigno opacidad 0 y se cambia cuando hay hover con group-hover */}
+                                                <button className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded text-xs">
+                                                    ✏️
+                                                </button>
+                                                <button 
+                                                onClick={() => handleDeleteCar(car.id)}
+                                                className="bg-red-600 hover:bg-red-700 text-white p-2 rounded text-xs"  
+                                                >
+                                                    🗑️
+                                                </button>
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+
+                                {/* Mensaje cuando no hay resultados */}
+                                {filteredCars.length === 0 && searchTerm && ( //solo salta la condicion si hay algo escrito y no encuentra coincidencias
+                                    <div className="text-center py-12">
+                                        <div className="text-gray-400 text-lg mb-2">No se encontraron coches</div>
+                                        <div className="text-gray-500">Intenta con otros términos de búsqueda</div>
+                                    </div>
+                                )}
+                            </div>
                             </div>
                         </div>
                     </div>

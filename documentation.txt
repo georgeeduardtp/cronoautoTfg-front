@@ -29,3 +29,11 @@
     -He aprendido el funcionamiento de verificaciones tipo: car.tags && car.tags.map((tag, index)), primero verifica la existencia de car.tags, y luego si existe ejecuta lo de despues del && , sino devuelve null
     -He aprendido funcionamiento de las key, optimizan el rerenderizado, se aplican cuando tenemos mapeos para que identifiquen mejor el elemento, por ejemplo tenemos el mapeo de coches entonces la key sera car.id, luego tenemos el mapeo de tags, los cuales podrán ser varios, entonces tenemos otra key, en caso de que tuvieramos una colaboracion de marcas en un coche, deberiamos mapearlas y generariamos otra key.
 6.Modificada pagina de contacto para que requiera datos sobre coches(no esta implementada funcionalidad)
+
+30/10/2025
+----------
+1.Cambios en la pagina de crear-coche(que será para admins y empleados unicamente), hemos cambiado la imagen por un listado de los vehiculos simple para gestionarlos, desde aqui se borrarán y se podrá acceder a editar, ademas de la funcionalidad de crear que ya estaba.
+2.Implementado el uso del endpoint delete con un handleDelete con ventana de confirmacion
+3.Instalada npm i styled-components para poder usar un comonente de uiverse.io
+4.He aprendido a usar metodo Intl.NumberFormat, que sirve para formatear numeros a distintos tipos, monedas, unidades,decimales,porcentajes, te agrega separadores y puedes escojer atributos
+5.Implementado el uso del endpoint getCarById el cual muestra el type carDetail
