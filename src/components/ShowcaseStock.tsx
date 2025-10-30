@@ -88,7 +88,7 @@ export default function ShowcaseStock() {
                                 )}
                             </div>
                             <Link 
-                                to="/Coche-detail" 
+                                to={`/coche-detail/${car.id}`} 
                                 className="bg-dark-950 border border-primary-600 hover:bg-primary-600 hover:text-dark-950 text-primary-600 px-5 py-2.5  text-sm font-medium transition-colors duration-300"
                             >
                                 Ver más

@@ -4,9 +4,8 @@ export default function Header() {
       {/* Header principal */}
       <header className="hidden md:block top-0 z-50 bg-dark-950/95 backdrop-blur border-b border-red-600 shadow-strong">
         <div className="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
-          <a href="./" className="font-heading font-bold text-white flex items-center gap-3 text-xl">
+          <a href="/" className="font-heading font-bold text-white flex items-center gap-3 text-xl">
             <img src="/escudo.svg" alt="Logo" className="w-36 h-36" />
-            <span className="text-gradient">CronoAuto</span>
           </a>
 
           {/* Navegación desktop */}

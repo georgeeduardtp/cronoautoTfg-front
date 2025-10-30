@@ -1,7 +1,13 @@
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import { useEffect } from 'react';
 
 export default function Contacto() {
+
+    useEffect(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, []);
+        
     return (
         <>
             <Header />

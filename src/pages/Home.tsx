@@ -1,9 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ShowcaseStock from "@/components/ShowcaseStock";
+import { useEffect } from "react";
 
 
 export default function Home() {
+  useEffect(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, []);
   return (
     <>
       <Header />

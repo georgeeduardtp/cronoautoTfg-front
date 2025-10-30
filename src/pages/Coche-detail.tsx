@@ -13,7 +13,7 @@ export default function CocheDetail() {
         brand: "",
         model: "",
         car_type: "",
-        imageUrl: "",
+        imageUrl: "https://static.vecteezy.com/system/resources/previews/048/910/778/large_2x/default-image-missing-placeholder-free-vector.jpg",
         year: 0,
         mileage: 0,
         tags: [],
@@ -46,6 +46,11 @@ export default function CocheDetail() {
         console.error('Error al cargar el coche:', error);
     });
 }, [id]);
+
+    // Scroll al inicio cuando se monta el componente
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, []);
 
     const formatPrice = (price: number) => {
         return new Intl.NumberFormat('es-ES', { //el Intl.NumberFormat permite formatear números según la localización, debes agregar parametro "es-ES" para formato español, st

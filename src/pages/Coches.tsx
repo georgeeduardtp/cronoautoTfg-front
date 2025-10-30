@@ -34,6 +34,10 @@ export default function Coches() {
     car.engine_type.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, []);
+
     return (
         <>
             <Header />
@@ -149,7 +153,7 @@ export default function Coches() {
                                             )}
                                         </div>
                                         <Link 
-                                            to={`/Coche-detail`} 
+                                            to={`/coche-detail/${car.id}`} 
                                             className="bg-primary-600 hover:bg-red-500 hover:text-black text-white px-4 py-2 text-sm font-medium transition-colors duration-300"
                                         >
                                             Ver más
