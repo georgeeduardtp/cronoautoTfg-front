@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 
 import { useEffect, useState } from 'react';
 import type { CarCard } from '@/types/car';
+import { confirmationAlert } from '@/components/Alert';
 
 export default function GestionCoches() {
     const [cars, setCars] = useState<CarCard[]>([]); // Estado para almacenar los coches existentes
@@ -117,11 +118,11 @@ export default function GestionCoches() {
         car.car_type.toLowerCase().includes(searchTerm.toLowerCase()) ||
         car.engine_type.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    const confirm = window.confirm;
+   
     const handleDeleteCar = async (carId: number) => {
-        
+        const result = await confirmationAlert('¿Estás seguro de que deseas eliminar este coche?', 'Esta acción no se puede deshacer.');
+        if (!result.isConfirmed) return;
         try {
-            if (!confirm('¿Estás seguro de que deseas eliminar este coche? Esta acción no se puede deshacer.')) return;
             await fetch(`http://localhost:8080/cars/${carId}`, {
                 method: 'DELETE',
             });
