@@ -26,3 +26,22 @@ export const confirmationAlert = (title: string, text: string) => {
     }
   });
 }
+
+export const mostrarAlertaEliminar = () => {
+    Swal.fire({
+        title: 'Eliminado',
+        text: 'Tu información ha sido eliminada con éxito.',
+        icon: 'success',
+        // 💡 Opciones de estilo
+        iconColor: '#fc0000ff', // Color del icono de éxito
+        background: '#000000ff', // Fondo azul claro
+        confirmButtonColor: '#e40000ff', // Botón morado
+        padding: '1.5em',
+        width: '500px',
+        willOpen: (popup) => {
+            // popup es el elemento DOM de la alerta
+            popup.style.border = '3px solid #b31717ff';
+            popup.style.color = '#ffffffff';
+        }
+});
+};

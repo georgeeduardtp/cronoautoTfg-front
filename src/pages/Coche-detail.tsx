@@ -1,6 +1,6 @@
 import type { CarDetail } from '../types/car';
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+
 import { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ export default function CocheDetail() {
         potencia: 0,
         transmission: "",
         motor: "",
-        etiqueta_ambiental: "",
+        etiquetaAmbiental: "",
         description: "",
         propietarios: 0,
         puertas: 0
@@ -84,19 +84,20 @@ export default function CocheDetail() {
     
 
     return (
-        <>
+        <div className="min-h-screen flex flex-col">
             <Header />
-            <div className="bg-dark-950 min-h-screen">
-                <div className="max-w-7xl mx-auto px-1 py-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <main className="flex-grow bg-dark-950 flex items-center">
+                <div className="max-w-7xl xl:max-w-[1450px] 2xl:max-w-[1800px] mx-auto px-4 lg:px-8 py-12 lg:py-16 w-full">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:items-center">
                         {/* Solo imagen - lado izquierdo */}
                         <div className="lg:col-span-2">
                             {/* Imagen del coche */}
-                            <div className="bg-dark-900 border border-red-600 rounded-lg overflow-hidden relative">
+                            <div className="bg-dark-900 border border-dark-600  overflow-hidden relative">
                                 <img 
                                     src={car.imageUrl} 
                                     alt={`${car.brand} ${car.model}`}
-                                    className="w-full h-64 md:h-[500px] object-cover"
+                                        className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] xl:h-[75vh] object-cover"
                                 />
                                 {/* Degradado desde abajo */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -113,14 +114,14 @@ export default function CocheDetail() {
                         {/* Sidebar derecho con todos los datos */}
                         <div  
                             ref={sidebarRef} //usamos el hook useRef para referenciar el div del sidebar
-                            className="h-64 md:h-[500px] overflow-y-auto space-y-6 p-1"
+                            className="h-[50vh] md:h-[60vh] lg:h-[70vh] xl:h-[75vh] overflow-y-auto space-y-6 p-1"
                             style={{ //hacemos que no aparezca la barra de scroll
                                 scrollbarWidth: 'none', 
                                 msOverflowStyle: 'none',
                             }}
                         >
                             {/* Precio y datos básicos */}
-                            <div className="bg-dark-900 border border-red-600 rounded-lg p-6">
+                            <div className="bg-dark-900 border border-dark-600  p-6">
                                 <div className="mb-6">
                                     <div className="flex items-baseline gap-3 mb-2">
                                         <span className="text-2xl font-bold text-primary-500">
@@ -144,7 +145,7 @@ export default function CocheDetail() {
                                     {car.tags.map((tag, index) => (
                                         <span 
                                             key={index}
-                                            className="px-2 py-1 bg-primary-600 text-white rounded-full text-xs font-medium"
+                                            className="px-2 py-1 bg-primary-600 text-white text-xs font-medium"
                                         >
                                             {tag}
                                         </span>
@@ -153,7 +154,7 @@ export default function CocheDetail() {
                             </div>
 
                             {/* Características técnicas */}
-                            <div className="bg-dark-900 border border-red-600 rounded-lg p-6">
+                            <div className="bg-dark-900 border border-dark-600  p-6">
                                 <h2 className="text-xl font-bold mb-4 text-white">Características Técnicas</h2>
                                 <div className="space-y-3">
                                     <div className="flex justify-between border-b border-dark-700 pb-2">
@@ -191,25 +192,25 @@ export default function CocheDetail() {
                                     <div className="flex justify-between border-b border-dark-700 pb-2">
                                         <span className="text-gray-300 text-sm">Etiqueta Ambiental:</span>
                                         <span className="font-medium bg-primary-600 text-white px-2 py-1 rounded text-xs">
-                                            {car.etiqueta_ambiental}
+                                            {car.etiquetaAmbiental}
                                         </span>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Descripción */}
-                            <div className="bg-dark-900 border border-red-600 rounded-lg p-6">
+                            <div className="bg-dark-900 border border-dark-600  p-6">
                                 <h2 className="text-xl font-bold mb-4 text-white">Descripción</h2>
                                 <p className="text-gray-300 leading-relaxed text-sm">{car.description}</p>
                             </div>
 
                             {/* Botones de acción */}
-                            <div className="bg-dark-900 border border-red-600 rounded-lg p-6">
+                            <div className="bg-dark-900 border border-dark-600 p-6">
                                 <div className="space-y-3">
-                                    <button className="w-full bg-primary-600 hover:bg-primary-500 text-white font-medium py-3 px-4 rounded-lg transition-colors text-sm">
+                                    <button className="w-full bg-primary-600 hover:bg-primary-500 text-white font-medium py-3 px-4  transition-colors text-sm">
                                         Contactar
                                     </button>
-                                    <button className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-4 rounded-lg transition-colors text-sm">
+                                    <button className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-4  transition-colors text-sm">
                                         Solicitar Información
                                     </button>
                                 </div>
@@ -217,8 +218,9 @@ export default function CocheDetail() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <Footer ano={2025} />
-        </>
+            </main>
+
+            
+        </div>
     );
 }

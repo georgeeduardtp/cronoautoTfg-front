@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 
 import { useEffect, useState } from 'react';
 import type { CarCard } from '@/types/car';
-import { confirmationAlert } from '@/components/Alert';
+import { confirmationAlert, mostrarAlertaEliminar } from '@/components/Alert';
 
 export default function GestionCoches() {
     const [cars, setCars] = useState<CarCard[]>([]); // Estado para almacenar los coches existentes
@@ -128,6 +128,7 @@ export default function GestionCoches() {
             });
             setCars(prev => prev.filter(car => car.id !== carId));
             console.log('Coche eliminado:', carId);
+            mostrarAlertaEliminar();
         } catch (error) {
             console.error('Error al eliminar coche:', error);
             alert('Error al eliminar coche');

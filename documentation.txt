@@ -42,3 +42,8 @@
 31/10/2025
 ----------
 1.He instalado el sweetalert2 y creado un modal de confirmacion
+
+02/11/2025
+
+1.He adaptado pagina coches, coche-gesiton y home para pantallas 2xl
+2.Agregado el filtro en home, solo se muestran coches con atributo destacado

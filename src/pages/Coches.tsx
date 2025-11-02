@@ -74,7 +74,7 @@ export default function Coches() {
                     </div>
                 </div>
 
-                <div className="max-w-7xl mx-auto px-4 py-7">
+                <div className="max-w-7xl xl:max-w-[1400px] 2xl:max-w-[1650px] mx-auto px-4 py-7">
 
                     {/* Mostrar término de búsqueda activo */}
                     {searchTerm && (
@@ -103,9 +103,9 @@ export default function Coches() {
                     )}
 
                     {/* Grid de coches */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-6 justify-items-center">
                         {filteredCars.map((car: CarCard) => ( //mapeamos solo los coches filtrados
-                            <div key={car.id} className="relative bg-dark-900 transition-all  overflow-hidden group cursor-pointer border border-transparent hover:border-red-500 hover:shadow-[6px_6px_10px_rgba(220,38,38,0.6),-2px_-2px_8px_rgba(220,38,38,0.2)]">
+                            <div key={car.id} className="relative bg-dark-900 transition-all overflow-hidden group cursor-pointer border border-transparent hover:border-red-500 hover:shadow-[6px_6px_10px_rgba(220,38,38,0.6),-2px_-2px_8px_rgba(220,38,38,0.2)] max-w-[320px] w-full mx-auto">
                                 {/* Etiquetas superiores */}
                                 <div className="absolute top-3 left-3 z-10 flex gap-1">
                                     {car.tags && car.tags.map((tag, index) => ( //verifica que car.tags existe antes de mapear
@@ -120,7 +120,7 @@ export default function Coches() {
                                     <img 
                                         src={car.imageUrl}
                                         alt={`${car.brand} ${car.model}`}
-                                        className="w-full h-40 object-cover"
+                                        className="w-full h-40 object-cover  "
                                     />
                                 </div>
                                 

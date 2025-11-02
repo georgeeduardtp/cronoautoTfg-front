@@ -1,10 +1,11 @@
-import type { CarCard } from '@/types/car';
+import type { CarCardDestacado } from '@/types/car';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function ShowcaseStock() {
 
-    const[cars,setCars] = useState<CarCard[]>([]);
+    // usamos el tipo CarCardDestacado porque el backend devuelve la propiedad `destacado` en algunos coches
+    const[cars,setCars] = useState<CarCardDestacado[]>([]);
     
         useEffect(() => { //captua eventos
         console.log('cargando coches...');
@@ -21,7 +22,7 @@ export default function ShowcaseStock() {
 
     return (
         <section className="w-full bg-dark-950 ">
-            <div className="max-w-7xl mx-auto px-4 py-12">
+            <div className="max-w-7xl xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 py-7">
                 <div className="flex justify-between items-center mb-8">
                     <h2 className="text-gradient text-3xl font-bold">Coches Destacados</h2>
                     <Link 
@@ -35,10 +36,12 @@ export default function ShowcaseStock() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                {cars.map((car: CarCard) => (
+                {/* Mostrar solo coches destacados */}
+                {/*He filtrado por destacados y agregado un max de 3*/  }
+                {cars.filter((car) => car.destacado===true).slice(0, 3).map((car: CarCardDestacado) => ( 
                     <div key={car.id}>
                 {/* Ejemplo de coche destacado */}
-                <div className="relative bg-dark-900  transition-all duration-0 overflow-hidden group cursor-pointer border border-transparent hover:border-primary-800 hover:shadow-[6px_6px_10px_rgba(220,38,38,0.6),-2px_-2px_8px_rgba(220,38,38,0.2)]">
+                <div className="relative bg-dark-900 lg:min-h-[420px] transition-all duration-0 overflow-hidden group cursor-pointer border border-transparent hover:border-primary-800 hover:shadow-[6px_6px_10px_rgba(220,38,38,0.6),-2px_-2px_8px_rgba(220,38,38,0.2)]">
                     {/* Etiquetas superiores */}
                     
                     <div className="absolute top-3 left-3 z-10 flex gap-1">
@@ -55,7 +58,7 @@ export default function ShowcaseStock() {
                         <img 
                             src={car.imageUrl}
                             alt={`${car.brand} ${car.model}`}
-                            className="w-full h-40 object-cover"
+                            className="w-full h-48 md:h-56 lg:h-64 object-cover"
                         />
                     </div>
                     

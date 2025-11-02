@@ -38,7 +38,7 @@ export type CarDetail = {
     potencia: number;
     transmission: string;
     motor: string;
-    etiqueta_ambiental: string;
+    etiquetaAmbiental: string;
     description: string;
     propietarios: number;
     puertas: number;
