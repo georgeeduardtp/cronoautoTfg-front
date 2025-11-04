@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 import type { CarCard } from '@/types/car';
+import { listCars } from '@/services/methods';
 
 
 
@@ -12,19 +13,37 @@ export default function Coches() {
     // Mock data para todos los coches
     const[cars,setCars] = useState<CarCard[]>([]);
     const[searchTerm, setSearchTerm] = useState('');
+    const[loading,setLoading] = useState<boolean>(true);
+          const[error,setError] = useState<string | null>(null);
 
-    useEffect(() => { //captua eventos
-    console.log('cargando coches...');
-    fetch('http://localhost:8080/cars',{  //peticion a la api
-      method: "GET",
-    }).then(response => response.json())
-    .then((res) => {
-      setCars(res);
-      console.log('Coches cargados:', res);
-    }).catch((error) => {
-      console.error('Error fetching cars:', error);
-    });
-  }, []);
+    useEffect(() => {
+              listCars()
+              .then(cars => {
+               const a = cars.map(a => {
+                  return {
+                    id: a.id,
+                    brand: a.brand,
+                    model: a.model,
+                    car_type: a.car_type,
+                    imageUrl: a.imageUrl,
+                    tags: a.tags,
+                    engine_type: a.engine_type,
+                    price: a.price,
+                    original_price: a.original_price,
+                    destacado: a.destacado
+                };
+                });
+                setCars(a);
+              }
+                  )
+              .catch(error => {
+                console.error('Error al cargar los artistas:', error);
+                setError('Error al cargar los artistas.');
+              }).finally(() => {
+                setLoading (false);
+              });
+            }, []);
+          
 
   // Filtramos coches en multiples campos de búsqueda
   const filteredCars = cars.filter((car: CarCard) =>  
@@ -34,13 +53,64 @@ export default function Coches() {
     car.engine_type.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  
   useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, []);
 
+    if (loading) {
+          
+                        return (
+                            <>
+                                <Header />
+                                <div 
+                    className="w-full py-12 px-4 bg-cover bg-center bg-no-repeat relative"
+                    style={{
+                        backgroundImage: 'url(https://static.vecteezy.com/system/resources/previews/027/533/475/non_2x/car-or-bike-smokie-background-realistic-ai-generative-free-photo.jpg)'
+                    }}
+                >
+                    <div className="absolute inset-0 bg-gradient-to-l from-red-900/70 to-black/90"></div>
+                    <div className="relative z-10 max-w-7xl mx-auto text-center">
+                        <h1 className="text-white text-4xl font-bold mb-4">Todos nuestros coches</h1>
+                        <p className="text-gray-200 text-lg mb-8">Explora nuestra colección completa de vehículos premium</p>
+                        
+                        {/* Buscador integrado en el hero */}
+                        <div className="max-w-lg mx-auto">
+                            <div className="relative">
+                                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                    <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                </div>
+                                <input
+                                    type="text"
+                                    placeholder="Buscar BMW, Tesla, Audi o cualquier modelo..."
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/50 transition-all duration-300 text-lg"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                <main className="flex-1 flex items-center justify-center min-h-screen bg-dark-950 mt-[-200px]">
+                                    <div className="text-center">
+                                        <img src="/escudo.svg" alt="Cargando" className="w-80 h-80 mx-auto logo-pulse" />
+                                        <p className="mt-4 text-white">Cargando coches...</p>
+                                    </div>
+                                </main>
+                                <Footer ano={2025} />
+                            </>
+                        );
+          
+                    }
+            if (error) {
+          
+              return <div>Error: {error}</div>;
+            }
     return (
         <>
-            <Header />
+            <Header selectedPage="Coches"/>
             <div className="bg-dark-950 min-h-screen">
                 {/* Encabezado con fondo de bandera de carreras */}
                 <div 

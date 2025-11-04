@@ -194,3 +194,26 @@ body {
 .scroll-left > * {
   direction: ltr; /* Como hemos cambiado la direccion esta en modo espejo y tenemos que restaurar la direccion original */
 }
+
+/* Pulsing logo animation used during loading screens */
+.logo-pulse {
+  display: inline-block;
+  animation: pulse-scale 1.4s ease-in-out infinite;
+  will-change: transform, filter;
+  filter: drop-shadow(0 8px 18px rgba(225,29,72,0.12));
+}
+
+@keyframes pulse-scale {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 6px 12px rgba(225,29,72,0.06));
+  }
+  50% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 18px 30px rgba(225,29,72,0.22));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 6px 12px rgba(225,29,72,0.06));
+  }
+}

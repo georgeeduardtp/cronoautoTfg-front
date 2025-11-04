@@ -5,7 +5,7 @@ export default function Registro() {
 
     return (
         <>
-            <Header />
+            <Header selectedPage="Registro"/>
             <div className="bg-dark-950 min-h-screen">
                 <div className="max-w-none">
                     <div className="flex flex-col lg:flex-row min-h-screen">

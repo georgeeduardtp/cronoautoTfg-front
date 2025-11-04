@@ -10,7 +10,7 @@ export default function Contacto() {
         
     return (
         <>
-            <Header />
+            <Header selectedPage="Contacto"/>
             <div className="bg-dark-950 min-h-screen">
                 
 

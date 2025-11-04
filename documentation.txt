@@ -47,3 +47,9 @@
 
 1.He adaptado pagina coches, coche-gesiton y home para pantallas 2xl
 2.Agregado el filtro en home, solo se muestran coches con atributo destacado
+
+04/11/2025
+----------
+1.Agregada propiedad selected en el header
+2.Eliminado componente ShowcaseStock porque no tenia sentido
+3.Creado util de methods para crear los fetch sin mostrar la url

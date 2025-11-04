@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 export default function Login() {
     return (
         <>
-            <Header />
+            <Header selectedPage="Login"/>
             <div className="bg-dark-950 min-h-screen">
                 <div className="max-w-none">
                     <div className="flex flex-col lg:flex-row min-h-screen">
