@@ -102,7 +102,7 @@ export default function Login() {
 
                                     <button
                                         type="submit"
-                                        className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-4 px-6 transition-colors duration-300 text-sm tracking-wider"
+                                        className="w-full bg-red-600 rounded-lg hover:bg-red-700 text-white font-medium py-4 px-6 transition-colors duration-300 text-sm tracking-wider"
                                     >
                                         INICIAR SESIÓN
                                     </button>

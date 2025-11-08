@@ -93,7 +93,7 @@ export default function CocheDetail() {
                         {/* Solo imagen - lado izquierdo */}
                         <div className="lg:col-span-2">
                             {/* Imagen del coche */}
-                            <div className="bg-dark-900 border border-dark-600  overflow-hidden relative">
+                            <div className=" rounded-md bg-dark-900 border border-dark-600 overflow-hidden relative">
                                 <img 
                                     src={car.imageUrl} 
                                     alt={`${car.brand} ${car.model}`}
@@ -121,7 +121,7 @@ export default function CocheDetail() {
                             }}
                         >
                             {/* Precio y datos básicos */}
-                            <div className="bg-dark-900 border border-dark-600  p-6">
+                            <div className="bg-dark-900 border rounded-lg border-dark-600  p-6">
                                 <div className="mb-6">
                                     <div className="flex items-baseline gap-3 mb-2">
                                         <span className="text-2xl font-bold text-primary-500">
@@ -145,7 +145,7 @@ export default function CocheDetail() {
                                     {car.tags.map((tag, index) => (
                                         <span 
                                             key={index}
-                                            className="px-2 py-1 bg-primary-600 text-white text-xs font-medium"
+                                            className="px-2 py-1 bg-primary-600 rounded-sm text-white text-xs font-medium"
                                         >
                                             {tag}
                                         </span>
@@ -154,7 +154,7 @@ export default function CocheDetail() {
                             </div>
 
                             {/* Características técnicas */}
-                            <div className="bg-dark-900 border border-dark-600  p-6">
+                            <div className="bg-dark-900 border rounded-lg border-dark-600  p-6">
                                 <h2 className="text-xl font-bold mb-4 text-white">Características Técnicas</h2>
                                 <div className="space-y-3">
                                     <div className="flex justify-between border-b border-dark-700 pb-2">
@@ -199,18 +199,18 @@ export default function CocheDetail() {
                             </div>
 
                             {/* Descripción */}
-                            <div className="bg-dark-900 border border-dark-600  p-6">
+                            <div className="bg-dark-900 border rounded-lg border-dark-600  p-6">
                                 <h2 className="text-xl font-bold mb-4 text-white">Descripción</h2>
                                 <p className="text-gray-300 leading-relaxed text-sm">{car.description}</p>
                             </div>
 
                             {/* Botones de acción */}
-                            <div className="bg-dark-900 border border-dark-600 p-6">
+                            <div className="bg-dark-900 border rounded-lg border-dark-600 p-6">
                                 <div className="space-y-3">
-                                    <button className="w-full bg-primary-600 hover:bg-primary-500 text-white font-medium py-3 px-4  transition-colors text-sm">
+                                    <button className="w-full rounded-lg bg-primary-600 hover:bg-primary-500 text-white font-medium py-3 px-4  transition-colors text-sm">
                                         Contactar
                                     </button>
-                                    <button className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-4  transition-colors text-sm">
+                                    <button className="w-full rounded-lg bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-4  transition-colors text-sm">
                                         Solicitar Información
                                     </button>
                                 </div>

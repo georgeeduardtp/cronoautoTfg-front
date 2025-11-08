@@ -165,15 +165,15 @@ export default function Registro() {
                                     </div>
 
                                     {/* Política de privacidad */}
-                                    <div className="flex items-start space-x-3 mt-4 mb-4">
+                                    <div className="flex items-start  space-x-3 mt-4 mb-4">
                                         <input
                                             type="checkbox"
                                             id="privacidad"
                                             name="privacidad"
                                             required
-                                            className="w-4 h-4 text-red-600 bg-white border-gray-300 rounded focus:ring-red-500 focus:ring-2 mt-1"
+                                            className="w-4 h-4 text-red-600 bg-white border-gray-300 rounded-lg focus:ring-red-500 focus:ring-2 mt-1 "
                                         />
-                                        <label htmlFor="privacidad" className="text-sm text-gray-300">
+                                        <label htmlFor="privacidad" className="text-sm text-gray-300 ">
                                             Acepto la <a href="#" className="text-red-500 hover:text-red-400 underline">política de privacidad</a> y 
                                             el <a href="#" className="text-red-500 hover:text-red-400 underline">tratamiento de datos</a> de CronoAuto.*
                                         </label>
@@ -181,7 +181,7 @@ export default function Registro() {
 
                                     <button
                                         type="submit"
-                                        className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 transition-colors duration-300 text-sm tracking-wider"
+                                        className="w-full bg-red-600 rounded-lg hover:bg-red-700 text-white font-medium py-3 px-6 transition-colors duration-300 text-sm tracking-wider"
                                     >
                                         CREAR CUENTA
                                     </button>

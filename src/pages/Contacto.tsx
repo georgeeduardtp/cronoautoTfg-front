@@ -229,7 +229,7 @@ export default function Contacto() {
 
                                 <button
                                     type="submit"
-                                    className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 transition-colors duration-300 text-sm tracking-wider"
+                                    className="w-full rounded-lg bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 transition-colors duration-300 text-sm tracking-wider"
                                 >
                                     SOLICITAR ENCARGO
                                 </button>

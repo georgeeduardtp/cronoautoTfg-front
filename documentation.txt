@@ -53,3 +53,6 @@
 1.Agregada propiedad selected en el header
 2.Eliminado componente ShowcaseStock porque no tenia sentido
 3.Creado util de methods para crear los fetch sin mostrar la url
+4.Creado boton de filtros, que despliega un aside para escojer filtros en la pagina COches, inicialmente esta posicionado fuera, pero con un useState setShowFilters, podemos hacer un condicional tanto en el overley para difuminar el fondo cuando sea true, como al propio menu de filtrado, que incialmente cuando es false esta fuera de la pantalla, pero cuando pasa a true aparece pegado a la derecha con una transicion
+5.Creada variante de movil del boton de filtro
+6. **Recordar hacer el boton de filtrar como componente, porque lo usare tambien en gestion**

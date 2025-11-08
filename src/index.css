@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 /* Configuración de tema personalizada para Tailwind CSS v4 */
@@ -102,7 +103,7 @@
 /* Estilos base mejorados */
 html, body, #root {
   height: 100%;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Public Sans', 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 body {

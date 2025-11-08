@@ -1,8 +1,10 @@
+
 import { Link } from "react-router-dom";
 type Props = {
   selectedPage?: string;
 };
 export default function Header({ selectedPage }: Props) {
+  
   return (
     <>
       {/* Header principal */}
@@ -19,7 +21,7 @@ export default function Header({ selectedPage }: Props) {
               className={`text-dark-300 hover:text-primary-500 font-medium transition-colors duration-200 
                 ${selectedPage === "Contacto" ? "text-primary-600" : ""}`}
             >
-              Contactanos
+              Solicita Coche
             </Link>
             <Link
               to="/coches"
@@ -52,7 +54,7 @@ export default function Header({ selectedPage }: Props) {
           <div className="flex justify-around items-center space-x-4">
             {/* Inicio */}
             <Link 
-              to="./"
+              to="/"
               className="flex flex-col items-center justify-center min-w-0 flex-1 text-center group"
             >
               <svg className="w-5 h-5 text-dark-300 group-hover:text-primary-500 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,7 +82,7 @@ export default function Header({ selectedPage }: Props) {
               <svg className="w-5 h-5 text-dark-300 group-hover:text-primary-500 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <span className="text-xs text-dark-300 group-hover:text-primary-500 transition-colors duration-200 mt-1">Contacto</span>
+              <span className="text-xs text-dark-300 group-hover:text-primary-500 transition-colors duration-200 mt-1">Solicita Coche</span>
             </Link>
 
             {/* Perfil */}
